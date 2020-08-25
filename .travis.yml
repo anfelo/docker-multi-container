@@ -10,10 +10,10 @@ script:
   - docker run -e CI=true anfelo/react-test npm run test
 
 after_sucess:
-  - docker build -t anfelo/multi-client -f ./app
-  - docker build -t anfelo/multi-nginx -f ./nginx
-  - docker build -t anfelo/multi-server -f ./server
-  - docker build -t anfelo/multi-worker -f ./worker
+  - docker build -t anfelo/multi-client ./app
+  - docker build -t anfelo/multi-nginx ./nginx
+  - docker build -t anfelo/multi-server ./server
+  - docker build -t anfelo/multi-worker ./worker
   # Log in to docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take the build images and push those to docker hub
