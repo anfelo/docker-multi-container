@@ -28,11 +28,11 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
     build:
-      context: ./client
+      context: ./app
       dockerfile: Dockerfile.dev
     volumes:
       - /app/node_modules
-      - ./client:/app
+      - ./app:/app
   worker:
     environment:
       - REDIS_HOST=redis
