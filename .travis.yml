@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t anfelo/react-test -f ./client/Dockerfile.dev .
+  - docker build -t anfelo/react-test -f ./app/Dockerfile.dev .
 
 script:
   - docker run -e CI=true anfelo/react-test npm run test
